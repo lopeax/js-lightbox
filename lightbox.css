@@ -1,0 +1,157 @@
+.lightbox-underlay {
+    background: transparent;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    -webkit-transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 100%;
+    z-index: 21;
+}
+.lightbox-underlay.active {
+    background: rgba(0, 0, 0, 0.85);
+}
+.lightbox-underlay.active:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.lightbox,
+.lightbox *,
+.lightbox *:before,
+.lightbox *:after {
+    box-sizing: border-box;
+}
+
+.lightbox {
+    background: #FFFFFF;
+    left: 50%;
+    min-height: 400px;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 720px;
+    z-index: 22;
+}
+.lightbox.active {
+    opacity: 1;
+}
+.lightbox .prev,
+.lightbox .next {
+    background: #F3F3F3;
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 40px;
+    z-index: 2;
+}
+.lightbox .prev:before,
+.lightbox .next:before {
+    border-left: 4px solid #333333;
+    border-top: 4px solid #333333;
+    content: '';
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 18px;
+}
+.lightbox .prev:hover,
+.lightbox .next:hover {
+    background: #DADADA;
+}
+.lightbox .prev:hover:before,
+.lightbox .next:hover:before {
+    border-left-color: #1A1A1A;
+    border-top-color: #1A1A1A;
+}
+.lightbox .prev {
+    left: 0;
+}
+.lightbox .prev:before {
+    left: calc(50% + 4px);
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+}
+.lightbox .next {
+    right: 0;
+}
+.lightbox .next:before {
+    left: calc(50% - 3px);
+    -webkit-transform: translate(-50%, -50%) rotate(135deg);
+            transform: translate(-50%, -50%) rotate(135deg);
+}
+.lightbox h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+.lightbox .lightbox-content {
+    padding: 60px;
+}
+.lightbox .close {
+    background: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    height: 40px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    -webkit-transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 40px;
+}
+.lightbox .close:before,
+.lightbox .close:after {
+    background: rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: background 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 24px;
+}
+.lightbox .close:before {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+            transform: translate(-50%, -50%) rotate(-45deg);
+}
+.lightbox .close:after {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+            transform: translate(-50%, -50%) rotate(45deg);
+}
+.lightbox .close:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+.lightbox .close:hover:before,
+.lightbox .close:hover:after {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-num {
+    position: absolute;
+    right: 70px;
+    top: 21px;
+}
+
+.lightbox-num div {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .lightbox {
+        width: 308px;
+    }
+    .lightbox .lightbox-img {
+        height: 200px;
+    }
+}
