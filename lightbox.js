@@ -2,6 +2,7 @@
 var items = $('.lightbox-item');.
 items.each(function(a, b){
     var item = $(this);
+    var c = a;
 
     var title = item.find('h3').text();
     var text = item.attr('data-content');
@@ -43,6 +44,7 @@ items.each(function(a, b){
                     setTimeout(function(){
                         lightboxunder.remove();
                         lightbox.remove();
+                        a = c;
                     },310);
                 });
 
@@ -53,6 +55,7 @@ items.each(function(a, b){
                     setTimeout(function(){
                         lightboxunder.remove();
                         lightbox.remove();
+                        a = c;
                     },310);
                 });
 
